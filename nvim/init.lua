@@ -1,11 +1,16 @@
--- Other Lua Files
+-- Packages
+
+home = os.getenv("HOME")
 
 require("common")
 
+-- Folding (open all folds by default)
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+ 
 -- Plugin Manager
 local plugin_dir = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
 local lazypath = vim.fs.joinpath(plugin_dir, "lazy.nvim")
-
 if not vim.uv.fs_stat(lazypath) then
   vim.fn.system {
     "git",
@@ -19,13 +24,18 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugin_specs = {
-  "kepano/flexoki-neovim",
-  name = "flexoki",
-  lazy = false,    -- load at startup
-  priority = 1000, -- load before other plugins
-  config = function()
-    vim.cmd("colorscheme flexoki-dark")
-  end,
+  {
+    "folke/tokyonight.nvim",
+    name = "tokyonight",
+    lazy = false,    -- load at startup
+    priority = 1000, -- load before other plugins
+    config = function()
+      vim.cmd("colorscheme tokyonight-moon")
+    end,
+  },
+  {
+    import = "plugins" -- loads every file in lua/plugins
+  },
 }
 
 require("lazy").setup {

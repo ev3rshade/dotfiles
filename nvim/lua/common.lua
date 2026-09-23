@@ -18,8 +18,14 @@ opt.encoding = "utf-8"    -- file char encoding
 opt.fileformat = "unix"   -- file format
 opt.termguicolors = true  -- 24-bit rgb colors
 opt.swapfile = false      -- swap file
-
+opt.mouse = ""            -- disable mouse
 
 -- Basic Keymaps
 local keymap = vim.keymap.set
 keymap("i", "jj", "<Esc>", { silent = true })
+
+-- Disable arrow keys in Normal mode
+vim.keymap.set('n', '<Up>', '<Nop>', { desc = 'Disable Up arrow key' })
+vim.keymap.set('n', '<Down>', '<Nop>', { desc = 'Disable Down arrow key' })
+vim.keymap.set('n', '<Left>', '<Nop>', { desc = 'Disable Left arrow key' })
+vim.keymap.set('n', '<Right>', '<Nop>', { desc = 'Disable Right arrow key' })
