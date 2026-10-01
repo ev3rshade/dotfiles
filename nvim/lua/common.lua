@@ -5,11 +5,13 @@ vim.g.maplocalleader = " "
 -- Core Editor Options
 local opt = vim.opt
 
+opt.title = true          -- display filename
 opt.number = true         -- line numbers
 opt.relativenumber = true -- relative line numbers
-opt.expandtab = true      -- convert tabs to spaces
-opt.shiftwidth = 2        -- indent size
-opt.tabstop = 2           -- tab size
+opt.expandtab = false     -- convert tabs to spaces
+opt.shiftwidth = 8        -- indent size
+opt.tabstop = 8           -- tab size
+opt.softtabstop = 8       -- soft tab size
 opt.autoindent = true     -- auto indentation
 opt.scrolloff = 7         -- min lines betw cursor and screen edges
 opt.colorcolumn = "80"    -- column marker
@@ -25,7 +27,7 @@ local keymap = vim.keymap.set
 keymap("i", "jj", "<Esc>", { silent = true })
 
 -- Disable arrow keys in Normal mode
-vim.keymap.set('n', '<Up>', '<Nop>', { desc = 'Disable Up arrow key' })
-vim.keymap.set('n', '<Down>', '<Nop>', { desc = 'Disable Down arrow key' })
-vim.keymap.set('n', '<Left>', '<Nop>', { desc = 'Disable Left arrow key' })
-vim.keymap.set('n', '<Right>', '<Nop>', { desc = 'Disable Right arrow key' })
+keymap('n', '<Up>', '<Nop>', { desc = 'Disable Up arrow key' })
+keymap('n', '<Down>', '<Nop>', { desc = 'Disable Down arrow key' })
+keymap('n', '<Left>', '<Nop>', { desc = 'Disable Left arrow key' })
+keymap('n', '<Right>', '<Nop>', { desc = 'Disable Right arrow key' })
