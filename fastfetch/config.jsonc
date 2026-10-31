@@ -1,0 +1,55 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "file",
+    "source": "~/.config/fastfetch/mudkip.txt",
+    "padding": {
+      "top": 1,
+      "left": 1,
+      "right": 2
+    }
+  },
+  "display": {
+    "separator": " 󰁔 ",
+    "color": {
+      "keys": "38;2;255;173;66",
+      "title": "38;2;123;206;239"
+    },
+    "percent": {
+      "color": {
+        "green": "38;2;255;173;66",
+        "yellow": "38;2;255;173;66",
+        "red": "38;2;255;173;66"
+      }
+    }
+  },
+  "modules": [
+    "title",
+    "separator",
+    "break",
+    { "type": "custom", "format": "\u001b[38;2;198;222;247m┌────\u001b[38;2;255;173;66m ⋆˙⟡⋆˙⟡⋆system˙⟡⋆˙⟡⋆ \u001b[38;2;198;222;247m──────────────────────────────────────┐" },
+    { "type": "os",      "key": " OS",   "keyColor": "38;2;123;206;239" },
+    { "type": "kernel",  "key": "│ ├",  "keyColor": "38;2;198;222;247" },
+    { "type": "uptime",  "key": "│ ├󱑀", "keyColor": "38;2;198;222;247" },
+    { "type": "battery", "key": "└ └",  "keyColor": "38;2;198;222;247" },
+    { "type": "custom", "format": "\u001b[38;2;198;222;247m└───────────────────────────────────────────────────────────────┘" },
+    "break",
+    { "type": "custom", "format": "\u001b[38;2;198;222;247m┌────\u001b[38;2;255;173;66m ⋆˙⟡ ⋆.hardware˚ ⊹₊⟡ ⋆ \u001b[38;2;198;222;247m────────────────────────────────────┐" },
+    { "type": "cpu",    "key": " CPU",  "keyColor": "38;2;123;206;239" },
+    { "type": "gpu",    "key": "│ ├󰍛", "keyColor": "38;2;198;222;247" },
+    { "type": "memory", "key": "│ ├",  "keyColor": "38;2;198;222;247" },
+    { "type": "disk",   "key": "└ └",  "keyColor": "38;2;198;222;247" },
+    { "type": "custom", "format": "\u001b[38;2;198;222;247m└───────────────────────────────────────────────────────────────┘" },
+    "break",
+    { "type": "custom", "format": "\u001b[38;2;198;222;247m┌────\u001b[38;2;255;173;66m .𖥔 ݁ ˖software.𖥔 ݁ . ✦ \u001b[38;2;198;222;247m─────────────────────────────────────┐" },
+    { "type": "shell",    "key": " Shell", "keyColor": "38;2;123;206;239" },
+    { "type": "terminal", "key": "│ ├",   "keyColor": "38;2;198;222;247" },
+    { "type": "wm",       "key": "│ ├",   "keyColor": "38;2;198;222;247" },
+    { "type": "theme",    "key": "│ ├󰉼",  "keyColor": "38;2;198;222;247" },
+    { "type": "font",     "key": "│ ├",   "keyColor": "38;2;198;222;247" },
+    { "type": "packages", "key": "└ └󰏖",  "keyColor": "38;2;198;222;247" },
+    { "type": "custom", "format": "\u001b[38;2;198;222;247m└───────────────────────────────────────────────────────────────┘" },
+    "break",
+    { "type": "colors", "paddingLeft": 2, "symbol": "circle" }
+  ]
+}
